@@ -16,19 +16,33 @@
 
 a {
   font-weight: 500;
+<<<<<<< HEAD
   text-decoration: inherit;
 }
 
 figure{
   margin: 0;
+=======
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+>>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
 }
 
 body {
   margin: 0;
+<<<<<<< HEAD
+=======
+  display: flex;
+  place-items: center;
+>>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
   min-width: 320px;
   min-height: 100vh;
 }
 
+<<<<<<< HEAD
 h1,h2,p {
   margin:0;
 }
@@ -39,6 +53,11 @@ li{
 
 label:hover{
 cursor: pointer;
+=======
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+>>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
 }
 
 button {
@@ -53,7 +72,11 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
+<<<<<<< HEAD
   cursor:pointer;
+=======
+  border-color: #646cff;
+>>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
 }
 button:focus,
 button:focus-visible {
