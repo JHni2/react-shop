@@ -1,0 +1,16 @@
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  background-color: rgb(36,41,51);
+}
+
+.gitICon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 20px;
+}

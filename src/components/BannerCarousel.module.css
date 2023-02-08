@@ -1,0 +1,15 @@
+.carouselContainer{
+  display: flex;
+  max-height: 700px;
+}
+
+.des{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: absolute;
+  height: 100%;
+  padding: 40px;
+  color:var(--color-white)
+}

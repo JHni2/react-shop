@@ -1,0 +1,78 @@
+/* Theme 스타일 작성 */
+/* Theme */
+:root {
+  --color-back: #181818;
+  --color-white: #ffffff;
+  --color-gray-100: #f3f3f3;
+  --color-gray-200: #e7e7e7;
+  --color-gray-300: #dcdcdc;
+  --color-gray-400: #d0d0d0;
+  --color-gray-500: #c4c4c4;
+  --color-gray-600: #aaa9a9;
+  --color-gray-700: #767676;
+  --color-gray-800: #4e4e4e;
+  --color-gray-900: #272727;
+  --color-blue-100: #cceafa;
+  --color-blue-200: #65cde3;
+  --color-blue-300: #61bfe6;
+  --color-blue-400: #33abe9;
+  --color-blue-500: #0096e4;
+  --color-blue-600: #0074e9;
+  --color-blue-700: #005a89;
+  --color-blue-800: #003c5b;
+  --color-blue-900: #001e2e;
+  --color-opacity-20: rgba(0, 0, 0, 0.2);
+  --color-red-100: #fad3d6;
+  --color-red-200: #f5a7ac;
+  --color-red-300: #ef7b83;
+  --color-red-400: #ea4f59;
+  --color-red-500: #e52330;
+  --color-red-600: #b71c26;
+  --color-red-700: #89151d;
+  --color-red-800: #5c0e13;
+  --color-red-900: #2e070a;
+  --color-yellow-100: #fef2d9;
+  --color-yellow-200: #fde4b4;
+  --color-yellow-300: #fdd78e;
+  --color-yellow-400: #fcc969;
+  --color-yellow-500: #fbbc43;
+  --color-yellow-600: #ff9b05;
+  --color-yellow-700: #977128;
+  --color-yellow-800: #644b1b;
+  --color-yellow-900: #32260d;
+  --color-green-100: #f4f5d2;
+  --color-green-200: #e9eba5;
+  --color-green-300: #dde177;
+  --color-green-400: #d2d74a;
+  --color-green-500: #c7cd1d;
+  --color-green-600: #9fa417;
+  --color-green-700: #777b11;
+  --color-green-800: #50520c;
+  --color-green-900: #282906;
+  --color-brown-100: #dfd5d4;
+  --color-brown-200: #bfaba9;
+  --color-brown-300: #9d7a6d;
+  --color-brown-400: #7e5852;
+  --color-brown-500: #5e2e27;
+  --color-brown-600: #4b251f;
+  --color-brown-700: #381c17;
+  --color-brown-800: #261210;
+  --color-brown-900: #130908;
+  --color-purple-100: #dfd8f2;
+  --color-purple-200: #beb0e6;
+  --color-purple-300: #9e89d9;
+  --color-purple-400: #7d61cd;
+  --color-purple-500: #5d3ac0;
+  --color-purple-600: #4a2e9a;
+  --color-purple-700: #382373;
+  --color-purple-800: #25174d;
+  --color-purple-900: #130c26;
+
+  --base-size: 10px;
+  --font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+  font-size: var(--base-size);
+}
+
