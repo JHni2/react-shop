@@ -57,7 +57,7 @@
   padding:0 16px 0 16px;
   background-color: rgb(75 85 99);
   border: none;
-  border-radius: 0.25rem;
+  border-radius: .5rem;
   outline: none;
 }
 

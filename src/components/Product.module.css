@@ -1,6 +1,11 @@
+.breadcrumbs{
+  text-align: start;
+  font-size: 14px;
+  padding: .5rem 0 .5rem 0;
+}
+
 .itemsContainer{
-  padding: 1.5rem 1rem 1rem 1rem;
-  margin-top: 3rem;
+  padding: 3rem 0 3rem 0;
 }
 
 .itemWrapper{
@@ -15,6 +20,7 @@
   flex-direction: column;
   width: 374px;
   height: 480px;
+  cursor: pointer;
 }
 
 figure{
@@ -33,7 +39,7 @@ figure{
   transition: max-width .25s, max-height .25s;
 }
 
-figure:hover .itemImg{
+.itemBox:hover .itemImg{
   max-width: 70%;
   max-height: 70%;
 }

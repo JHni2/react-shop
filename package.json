@@ -9,18 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.3",
-    "react": "^18.2.0",
-    "react-alice-carousel": "^2.7.0",
-    "react-bootstrap": "^2.7.0",
-    "react-dom": "^18.2.0",
-    "react-responsive-carousel": "^3.2.23",
-=======
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
->>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
     "react-router-dom": "^6.8.1"
   },
   "devDependencies": {

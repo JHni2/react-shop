@@ -238,6 +238,8 @@ button:disabled {
   margin-bottom: 1rem;
 }
 
-.mb-5{
-  margin-bottom: 2rem;
+.mt{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
+

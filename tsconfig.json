@@ -14,12 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-<<<<<<< HEAD
-    "jsx": "react-jsx"
-=======
     "jsx": "react-jsx",
     "types": ["react/next", "react-dom/next"]
->>>>>>> 1d72b9250245086797f8782736181e4df7e4bfb1
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
