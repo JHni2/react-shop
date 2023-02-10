@@ -1,4 +1,4 @@
-interface Items {
+export interface Items {
   id: number;
   title: string;
   price: number;
@@ -11,7 +11,7 @@ interface Items {
   };
 }
 
-export const ItemsData: Items[] = [
+export const ItemsDatas: Items[] = [
   {
     id: 1,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
