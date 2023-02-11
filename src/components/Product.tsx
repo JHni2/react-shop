@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ItemsDatas } from '../stores/items';
 import styles from './Product.module.css';
-import ProductDetail from './ProductDetail';
 
 interface Props {
   type: string;

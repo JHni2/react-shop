@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Items } from '../stores/items';
 import styles from './Header.module.css';
+import SearchProduct from './SearchProduct';
 
 export default function Header() {
   const navigate = useNavigate();
+  const [inputs, setInputs] = useState<Items[]>([]);
 
   return (
     <div className={styles.nav}>
@@ -49,7 +53,11 @@ export default function Header() {
           </svg>
         </label>
         <div className={styles.category}>
-          <input type="text" placeholder="검색" className={styles.inputText} />
+          <SearchProduct
+            onUpdateProduct={(inputs) => {
+              setInputs(inputs);
+            }}
+          />
         </div>
         <div className={styles.label}>
           <svg
