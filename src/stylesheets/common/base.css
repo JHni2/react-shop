@@ -27,7 +27,7 @@ button:disabled {
 
 /* title */
 .title-bold-16 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -35,7 +35,7 @@ button:disabled {
 }
 
 .title-bold-24 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -43,7 +43,7 @@ button:disabled {
 }
 
 .title-bold-28 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -51,16 +51,17 @@ button:disabled {
 }
 
 .title-bold-30 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 115%;
   letter-spacing: -0.0005em;
+  text-align: center;
 }
 
 .title-medium-16 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -68,7 +69,7 @@ button:disabled {
 }
 
 .title-medium-24 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -76,7 +77,7 @@ button:disabled {
 }
 
 .title-medium-28 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -84,7 +85,7 @@ button:disabled {
 }
 
 .title-medium-32 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -94,7 +95,7 @@ button:disabled {
 
 /* text */
 .text-regular-12 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -103,7 +104,7 @@ button:disabled {
 }
 
 .text-regular-14 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -112,7 +113,7 @@ button:disabled {
 }
 
 .text-regular-16 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -121,7 +122,7 @@ button:disabled {
 }
 
 .text-regular-18 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -130,7 +131,7 @@ button:disabled {
 }
 
 .text-regular-20 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -139,7 +140,7 @@ button:disabled {
 }
 
 .text-medium-12 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -147,7 +148,7 @@ button:disabled {
 }
 
 .text-medium-14 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -155,7 +156,7 @@ button:disabled {
 }
 
 .text-medium-16 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -163,7 +164,7 @@ button:disabled {
 }
 
 .text-medium-18 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -171,7 +172,7 @@ button:disabled {
 }
 
 .text-medium-20 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -180,7 +181,7 @@ button:disabled {
 }
 
 .text-bold-12 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -189,7 +190,7 @@ button:disabled {
 }
 
 .text-bold-14 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -198,7 +199,7 @@ button:disabled {
 }
 
 .text-bold-16 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -207,8 +208,8 @@ button:disabled {
 }
 
 .text-bold-18 {
-  font-family: "Noto Sans";
-  font-style:normal;
+  font-family: 'Noto Sans';
+  font-style: normal;
   font-weight: 700;
   font-size: 19px;
   line-height: 150%;
@@ -216,7 +217,7 @@ button:disabled {
 }
 
 .text-bold-20 {
-  font-family: "Noto Sans";
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -233,13 +234,12 @@ button:disabled {
   margin-right: 1rem;
 }
 
-.mtb{
+.mtb {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.mt{
+.mt {
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
-
