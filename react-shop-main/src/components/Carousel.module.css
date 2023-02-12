@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.flexbox {
+    display: flex;
+}
+
+.flexbox > img {
+    width: 100%;
+    height: 700px;
+    /*background-repeat: no-repeat;*/
+    /*background-position: 50% 50%;*/
+    /*background-size: cover;*/
+    flex: none;
+    /*overflow: hidden;*/
+}
+
+.carousel {
+    width: 100%;
+    position: absolute;
+    background: none;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel > .icon {
+    color: white;
+    cursor: pointer;
+    font-size: 80px;
+    background: none;
+    height: 700px;
+}
+
+.carousel > .icon:hover {
+    background: #6e6e6e;
+    opacity: 30%;
+}

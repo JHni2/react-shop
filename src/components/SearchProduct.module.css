@@ -1,0 +1,40 @@
+.inputText{
+  width: 188px; 
+  height: 46px;
+  padding:0 16px 0 16px;
+  background-color: rgb(75 85 99);
+  border: none;
+  border-radius: .5rem;
+  outline: none;
+}
+
+.serachedContainer{
+  position: absolute;
+  top: 62px;
+  right: 32px;
+  width: 22rem;
+  max-height: 28rem;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: rgb(75 85 99);
+}
+
+.searchList{
+  padding:1rem;
+  transition: background-color .3s;
+}
+
+.searchListText{
+  text-align: start;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 텍스트를 자를 때 원하는 단위 ex) 3줄 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;  
+}
+
+.searchList:hover{
+  background-color: #545D6C;
+}
+

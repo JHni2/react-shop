@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: #24292f;
+  color:var(--color-white)
+}
+
+.title{
+  margin: 0 1rem;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.label{
+  width: 24px;
+  height: 24px;
+  margin: 0.5rem;
+}
+
+.category{
+  padding-left:0.75rem;
+  padding-right:0.75rem;
+  cursor: pointer;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.flex{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex1{
+  display: flex;
+  flex:1 1 0%
+}
+
+.checkbox{
+  appearance: none ;
+}
+
+.swapOff{
+  position: relative;
+  bottom: 20px;
+}
+
