@@ -53,7 +53,7 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
             <img className={styles.img} src={itemInfo.image} alt={itemInfo.title} />
           </figure>
           <div className={styles.productInfo}>
-            <h2>{itemInfo.title}</h2>
+            <h2 style={{ fontWeight: '700' }}>{itemInfo.title}</h2>
             <p>{itemInfo.description}</p>
             <div className={styles.ratingContainer}>
               <div>

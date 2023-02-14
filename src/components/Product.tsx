@@ -40,7 +40,7 @@ export default function Product(props: Props): React.ReactElement {
                     navigate(`/product/${item.id}`);
                   }}
                 >
-                  <figure>
+                  <figure className={styles.imgBox}>
                     <img className={styles.itemImg} src={item.image} />
                   </figure>
                   <div className={styles.des}>

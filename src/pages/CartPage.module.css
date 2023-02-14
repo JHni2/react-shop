@@ -1,8 +1,10 @@
 .pageContainer{
+  max-width: 1360px;
   width: 100%;
-  min-height:calc(100vh - 4rem - 165px);
+  min-height: calc(100vh - 165px);
   margin-top: 62px;
-  padding: 2rem;
+  margin: auto;
+  padding: 1rem;
 }
 
 .breadcrumbs{
@@ -34,9 +36,16 @@
 }
 
 .imgContainer{
-  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--color-white);
+  margin: 1rem 0;
   width: 250px;
   height: 250px;
+  min-width: 210;
   border-radius: 10px;
 }
 
@@ -62,4 +71,14 @@
   left: 0;
   display: flex;
   cursor:auto
+}
+
+@media screen and (max-width: 1024px){
+  .productBox{
+    flex-direction: column;
+  }
+  .imgContainer{
+    width: 98%;
+  }
+
 }

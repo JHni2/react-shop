@@ -2,8 +2,7 @@
   box-sizing: border-box;
 }
 
-.nav,
-.navWhite {
+.navContainer{
   padding: 8px;
   display: flex;
   justify-content: center;
@@ -12,18 +11,28 @@
   width: 100%;
   z-index: 10;
   background-color: #24292f;
-  color:var(--color-white)
+  color:var(--color-white);
+  box-shadow: 0 4px 10px 0px rgb(36 41 47 / 20%);
 }
 
-.navWhite{
-  background-color: #ffffff;
-  color:#24292f;
+.nav{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1360px;
+  min-width: 300px;
 }
 
 .title{
+  display: flex;
   margin-left: 1rem;
   font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+}
+
+.menu{
+  display: none;
 }
 
 .label{
@@ -57,9 +66,10 @@
   align-items: center;
 }
 
-.flex1{
+.navCategory{
   display: flex;
-  flex:1 1 0%
+  flex:1 1 0%;
+  transition: ease all .5s;
 }
 
 .checkbox{
@@ -79,4 +89,20 @@
   padding: 0.2rem 0.7rem;
   border-radius: 100px;
   background: #EF4444;
+}
+
+@media screen and (max-width: 768px){
+  .menu{
+    display: block;
+  }
+  .navCategory{
+  display: none;
+ }
+ .title{
+  flex: 1 1 0%;
+ }
+}
+
+@media screen and (max-width: 488px){
+ 
 }

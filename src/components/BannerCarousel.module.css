@@ -1,6 +1,7 @@
 .carouselContainer{
   display: flex;
   max-height: 700px;
+  margin-top: 64px;
 }
 
 .des{
@@ -22,4 +23,15 @@
   font-size: 14px;
   font-weight: 700;
   background-color: #191D24;
+  transition: all .3s;
+}
+
+.moveBtn:hover{
+  background-color:#111318;
+}
+
+@media screen and (max-width: 1024px){
+.carouselContainer{
+  height: 250px;
+}
 }

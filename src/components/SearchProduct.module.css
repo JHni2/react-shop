@@ -11,7 +11,7 @@
 .serachedContainer{
   position: absolute;
   top: 62px;
-  right: 32px;
+  right: calc((100vw - 1328px) / 2);
   width: 22rem;
   max-height: 28rem;
   margin: 0;
@@ -47,4 +47,27 @@
   left: 0;
   display: flex;
   cursor:auto
+}
+
+@media screen and (max-width: 1400px){
+  .serachedContainer{
+    position: absolute;
+      top: 62px;
+      right: 32px;
+   }
+}
+
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 768px){
+ 
+}
+
+@media screen and (max-width: 488px){
+ .inputText{
+  width: 62px;
+  padding-left: 14px;
+ }
 }
