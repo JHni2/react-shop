@@ -8,6 +8,17 @@
   padding: 3rem 0 3rem 0;
 }
 
+.itemTitle{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  line-height: 115%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 .itemWrapper{
   display: flex;
   flex-wrap: wrap;

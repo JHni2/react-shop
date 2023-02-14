@@ -1,4 +1,4 @@
-import styles from './Modal.module.css';
+import styles from './SearchModal.module.css';
 
 import { ReactNode } from 'react';
 
@@ -8,7 +8,7 @@ interface ModalType {
   toggle: () => void;
 }
 
-export default function Modal(props: ModalType) {
+export default function SearchModal(props: ModalType) {
   return (
     <>
       {props.isOpen && (

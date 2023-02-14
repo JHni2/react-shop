@@ -1,5 +1,5 @@
 .inputText{
-  width: 188px; 
+  width: 187px;
   height: 46px;
   padding:0 16px 0 16px;
   background-color: rgb(75 85 99);
@@ -29,7 +29,7 @@
   text-align: start;
   white-space: normal;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* 텍스트를 자를 때 원하는 단위 ex) 3줄 */
+  -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
   overflow: hidden;  
 }
@@ -38,3 +38,13 @@
   background-color: #545D6C;
 }
 
+.modalOverlay {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  cursor:auto
+}

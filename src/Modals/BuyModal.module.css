@@ -1,0 +1,16 @@
+.modalBox{
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background: #20252E;
+  color: var(--base-text-color);
+}
+
+.modalText{
+  padding: 1.5rem 0 3rem 0;
+}
+
+.btnGroup{
+  display: flex;
+  gap:1rem;
+  justify-content: flex-end;
+}

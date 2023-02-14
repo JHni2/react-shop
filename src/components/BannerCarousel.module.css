@@ -13,3 +13,13 @@
   padding: 40px;
   color:var(--color-white)
 }
+
+.moveBtn{
+  margin-top: 0.75rem;
+  color:var(--base-text-color);
+  padding:1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #191D24;
+}

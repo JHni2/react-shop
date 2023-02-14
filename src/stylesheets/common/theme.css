@@ -70,6 +70,7 @@
 
   --base-size: 10px;
   --font-family: "Noto Sans KR", sans-serif;
+  --base-text-color:rgb(165,172,186);
 }
 
 html {

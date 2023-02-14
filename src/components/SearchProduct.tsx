@@ -3,8 +3,8 @@ import styles from './SearchProduct.module.css';
 import { useState } from 'react';
 import { ItemsDatas } from '../stores/items';
 import useModal from '../hooks/useModal';
-import Modal from './Modal';
 import { Link } from 'react-router-dom';
+import SearchModal from '../Modals/SearchModal';
 
 export default function SearchProduct() {
   const [input, setInput] = useState('');
@@ -26,7 +26,7 @@ export default function SearchProduct() {
         className={styles.inputText}
         onClick={toggle}
       />
-      <Modal isOpen={isOpen} toggle={toggle}>
+      <SearchModal isOpen={isOpen} toggle={toggle}>
         <ul className={styles.serachedContainer}>
           {input.length > 0 &&
             searched.map((item) => {
@@ -39,7 +39,7 @@ export default function SearchProduct() {
               );
             })}
         </ul>
-      </Modal>
+      </SearchModal>
     </>
   );
 }

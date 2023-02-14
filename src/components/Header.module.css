@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-.nav {
+.nav,
+.navWhite {
   padding: 8px;
   display: flex;
   justify-content: center;
@@ -14,8 +15,13 @@
   color:var(--color-white)
 }
 
+.navWhite{
+  background-color: #ffffff;
+  color:#24292f;
+}
+
 .title{
-  margin: 0 1rem;
+  margin-left: 1rem;
   font-size: 18px;
   cursor: pointer;
 }
@@ -24,12 +30,21 @@
   width: 24px;
   height: 24px;
   margin: 0.5rem;
+  cursor: pointer;
 }
 
-.category{
+.category,
+.searchBox{
   padding-left:0.75rem;
   padding-right:0.75rem;
+  line-height: 2;
   cursor: pointer;
+  border-radius: 10px;
+  transition: background-color .3s;
+}
+
+.category:hover{
+  background-color: rgba(74, 83, 95, 0.555);
 }
 
 .cursor{
@@ -53,6 +68,15 @@
 
 .swapOff{
   position: relative;
-  bottom: 20px;
 }
 
+.cartCount{
+  display: inline-block;
+  position: relative;
+  left: 7px;
+  bottom: 36px;
+  font-size: 12px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+  background: #EF4444;
+}

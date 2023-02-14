@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ItemsDatas } from '../stores/items';
 import styles from './Product.module.css';
 
@@ -23,13 +23,9 @@ export default function Product(props: Props): React.ReactElement {
 
   return (
     <>
-      {currLocation ? (
-        <div className={styles.breadcrumbs}>홈 &gt; {category}</div>
-      ) : (
-        <></>
-      )}
+      {currLocation ? <div className={styles.breadcrumbs}>홈 &gt; {category}</div> : <></>}
       <div className={styles.itemsContainer}>
-        <h2 className="title-bold-30 mt">{category}</h2>
+        <h2 className={styles.itemTitle}>{category}</h2>
         <div className={styles.itemWrapper}>
           {ItemsDatas.map((item, index) => {
             if (

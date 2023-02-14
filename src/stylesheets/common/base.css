@@ -56,8 +56,6 @@ button:disabled {
   font-weight: 700;
   font-size: 30px;
   line-height: 115%;
-  letter-spacing: -0.0005em;
-  text-align: center;
 }
 
 .title-medium-16 {
@@ -84,11 +82,11 @@ button:disabled {
   line-height: 150%;
 }
 
-.title-medium-32 {
+.title-medium-30 {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 150%;
   letter-spacing: -0.0005em;
 }
@@ -180,6 +178,15 @@ button:disabled {
   letter-spacing: -0.0005em;
 }
 
+.text-medium-24 {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.0005em;
+}
+
 .text-bold-12 {
   font-family: 'Noto Sans';
   font-style: normal;
@@ -219,11 +226,12 @@ button:disabled {
 .text-bold-20 {
   font-family: 'Noto Sans';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 150%;
   letter-spacing: -0.0005em;
 }
+
 
 /* margin */
 .ml {
@@ -242,4 +250,32 @@ button:disabled {
 .mt {
   margin-top: 1rem;
   margin-bottom: 3rem;
+}
+
+.btn-primary,
+.btn-move{
+  min-width: 38px;
+  font-size: 14px;
+  padding: 1.3rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgb(87,13,248);
+  border:none
+}
+
+.btn-ghost{
+  min-width: 38px;
+  font-size: 14px;
+  padding: 1.3rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: default;
+  background: transparent;
+}
+
+.btn-move{
+  background: transparent;
+  color:rgb(166,173,186);
+  border:1px solid rgb(166,173,186);
 }

@@ -1,0 +1,26 @@
+.pageContainer{
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 4rem - 165px);
+  margin-top: 62px;
+  padding: 2rem;
+}
+
+.textBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title{
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.text{
+  font-size:2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
