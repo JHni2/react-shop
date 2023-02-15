@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './ProductDetailPage.module.css';
 import { Link, useParams } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import { Items, ItemsDatas } from '../stores/items';
 import StarRate from '../components/StarRating';
 
@@ -13,59 +11,63 @@ interface CartProps {
 
 export default function ProductDetailPage(props: CartProps): React.ReactElement {
   const { id } = useParams();
-  const itemInfo = ItemsDatas.filter((itemData) => itemData.id === Number(id))[0];
+  const currentItem = props.cart.filter((itemData) => itemData.id === Number(id))[0];
+  const currItemInfo =
+    currentItem == undefined
+      ? ItemsDatas.filter((itemData) => itemData.id === Number(id))[0]
+      : props.cart.filter((itemData) => itemData.id === Number(id))[0];
+
+  const handleCartItems = (cartItemInfo: Items) => {
+    cartItemInfo.quantity += 1;
+
+    const newCartItem = {
+      ...cartItemInfo,
+      quantity: cartItemInfo.quantity,
+    };
+
+    const found = props.cart.find((el) => el.id === newCartItem.id);
+    if (found) setQuantity(cartItemInfo.id, cartItemInfo.quantity);
+    else props.setCart([...props.cart, newCartItem]);
+  };
+
+  const setQuantity = (id: number, quantity: number) => {
+    const found = props.cart.filter((el) => el.id === id)[0];
+    const idx = props.cart.indexOf(found);
+    const newCartItem = {
+      ...currItemInfo,
+      quantity: quantity,
+    };
+    props.setCart([...props.cart.slice(0, idx), newCartItem, ...props.cart.slice(idx + 1)]);
+  };
 
   useEffect(() => {
     localStorage.setItem('products', JSON.stringify(props.cart));
   }, [props.cart]);
 
-  const handleCartItems = (itemInfo: Items) => {
-    itemInfo.quantity += 1;
-
-    const newCartItem = {
-      ...itemInfo,
-    };
-
-    const found = props.cart.find((el) => el.id === newCartItem.id);
-    if (found) setQuantity(itemInfo.id, itemInfo.quantity);
-    else props.setCart([...props.cart, newCartItem]);
-  };
-
-  const setQuantity = (id: Number, quantatiy: Number) => {
-    const found = props.cart.filter((el) => el.id === id)[0];
-    const idx = props.cart.indexOf(found);
-    const newCartItem = {
-      ...itemInfo,
-      quantatiy: quantatiy,
-    };
-    props.setCart([...props.cart.slice(0, idx), newCartItem, ...props.cart.slice(idx + 1)]);
-  };
-
   return (
     <div className="wrapper">
-      <Header />
       <section className={styles.pageContainer}>
         <div className={styles.breadcrumbs}>
-          {itemInfo.category[0]} &gt; {itemInfo.title}
+          {currItemInfo.category[0]} &gt; {currItemInfo.title}
         </div>
         <div className={styles.productContainer}>
           <figure className={styles.imgContainer}>
-            <img className={styles.img} src={itemInfo.image} alt={itemInfo.title} />
+            <img className={styles.img} src={currItemInfo.image} alt={currItemInfo.title} />
           </figure>
           <div className={styles.productInfo}>
-            <h2 style={{ fontWeight: '700' }}>{itemInfo.title}</h2>
-            <p>{itemInfo.description}</p>
+            <h2 style={{ fontWeight: '700' }}>{currItemInfo.title}</h2>
+            <p>{currItemInfo.description}</p>
             <div className={styles.ratingContainer}>
               <div>
-                <StarRate rate={itemInfo.rating.rate} />
+                <StarRate rate={currItemInfo.rating.rate} />
               </div>
               <div>
-                {itemInfo.rating.rate} / {itemInfo.rating.count} 참여
+                {currItemInfo.rating.rate} / {currItemInfo.rating.count} 참여
               </div>
             </div>
-            <p className={styles.price}>${itemInfo.price}</p>
+            <p className={styles.price}>${currItemInfo.price}</p>
             <div className={styles.ButtonContainer}>
-              <button className="btn-main" onClick={() => handleCartItems(itemInfo)}>
+              <button className="btn-main" onClick={() => handleCartItems(currItemInfo)}>
                 장바구니에 담기
               </button>
               <Link to="/cart">
@@ -75,7 +77,6 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

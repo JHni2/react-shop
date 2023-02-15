@@ -29,3 +29,19 @@
     margin-top: 0;
   }
 }
+
+@media screen and (max-width: 768px){
+  .modalBox{
+    width: auto;
+    padding: 2.5rem 4rem;
+  }
+}
+
+@media screen and (max-width: 488px){
+ .modalBox{
+   position: fixed;
+   min-width: 255px;
+   width: 100%;
+   bottom: 0;
+ }
+}

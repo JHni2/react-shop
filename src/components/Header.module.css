@@ -99,8 +99,8 @@
   background: #EF4444;
 }
 
-@media screen and (max-width: 1024px){
-
+.none{
+  display: block;
 }
 
 @media screen and (max-width: 768px){
@@ -113,5 +113,10 @@
 }
 
 @media screen and (max-width: 488px){
- 
-}
+  .nav{
+    justify-content: space-between;
+  }
+  .none{
+    display: none;
+  }
+ }

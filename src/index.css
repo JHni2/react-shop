@@ -114,13 +114,17 @@ a:hover{
   color: var(--base-text-color);
 }
 
+.modal{
+  padding-right:0 !important;
+}
+
 .modal-open{
   overflow:auto !important;
   padding-right:0 !important;
 }
 
 .modal-backdrop{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content{

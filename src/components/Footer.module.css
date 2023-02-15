@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   padding: 40px;
+  color:var(--base-text-color);
   background-color: rgb(36,41,51);
 }
 

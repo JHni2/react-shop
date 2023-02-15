@@ -17,14 +17,14 @@
   flex-direction: column;
   text-align: start;
   padding: 1rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .priceBox{
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 3.5rem;
 }
 
 .productContainer{
@@ -83,5 +83,11 @@
   .cardBox{
     padding: 3rem 0;
 
+  }
+}
+
+@media screen and (max-width: 488px){
+  .priceBox{
+    justify-content: flex-start;
   }
 }

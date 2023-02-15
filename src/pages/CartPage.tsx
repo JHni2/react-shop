@@ -1,8 +1,6 @@
 import styles from './CartPage.module.css';
 
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { Items } from '../stores/items';
 import BuyModal from '../Modals/BuyModal';
@@ -23,7 +21,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
     const idx = props.cart.indexOf(found);
     const newCartItem = {
       ...product,
-      quantatiy: product.quantity,
+      quantity: product.quantity,
     };
     props.setCart([...props.cart.slice(0, idx), newCartItem, ...props.cart.slice(idx + 1)]);
 
@@ -44,7 +42,6 @@ export default function CartPage(props: CartProps): React.ReactElement {
     <>
       <BuyModal setCart={props.setCart} show={showModal} onHide={() => setShowModal(false)} />
       <div className="wrapper">
-        <Header />
         <section className={styles.pageContainer}>
           <div className={styles.breadcrumbs}>홈 &gt; 장바구니</div>
           <div className={styles.cartContainer}>
@@ -117,7 +114,6 @@ export default function CartPage(props: CartProps): React.ReactElement {
             )}
           </div>
         </section>
-        <Footer />
       </div>
     </>
   );

@@ -3,14 +3,10 @@ import React from 'react';
 import useModal from '../hooks/useModal';
 import SearchModal from '../Modals/SearchModal';
 import { Link } from 'react-router-dom';
+import { categories } from '../stores/items';
 
 export default function SideNav(): React.ReactElement {
   const { isOpen, toggle } = useModal();
-  const categorys = [
-    { ko: '패션', en: 'fashion' },
-    { ko: '악세서리', en: 'accessory' },
-    { ko: '디지털', en: 'digital' },
-  ];
 
   if (isOpen)
     document.body.style.cssText = `
@@ -35,7 +31,7 @@ export default function SideNav(): React.ReactElement {
       </label>
       <SearchModal isOpen={isOpen} toggle={toggle} background={'black'}>
         <ul className={styles.sideNavContainer}>
-          {categorys.map((category, idx) => {
+          {categories.map((category, idx) => {
             return (
               <li className={styles.sideNavItem} key={idx}>
                 <Link to={`/${category.en}`}>{category.ko}</Link>

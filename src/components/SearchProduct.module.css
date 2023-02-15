@@ -57,17 +57,14 @@
    }
 }
 
-@media screen and (max-width: 1200px){
-
-}
-
-@media screen and (max-width: 768px){
- 
-}
-
 @media screen and (max-width: 488px){
  .inputText{
   width: 62px;
   padding-left: 14px;
+ }
+ .inputText:focus{
+  width: 202px;
+  padding-left: 14px;
+  transition: width .3s;
  }
 }

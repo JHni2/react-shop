@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
 import CartPage from './pages/CartPage';
 import MainPage from './pages/MainPage';
@@ -16,6 +18,7 @@ function App(): React.ReactElement {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Header cart={cart} />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/fashion" element={<ProductPage />} />
@@ -25,6 +28,7 @@ function App(): React.ReactElement {
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

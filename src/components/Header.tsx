@@ -1,17 +1,21 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Items } from '../stores/items';
+import { categories, Items } from '../stores/items';
 import styles from './Header.module.css';
 import SearchProduct from './SearchProduct';
 import SideNav from './SideNav';
 
-export default function Header() {
-  const navigate = useNavigate();
+interface PropsType {
+  cart: Items[];
+}
 
-  const getCartCount = localStorage.getItem('products');
+export default function Header(props: PropsType) {
+  const navigate = useNavigate();
+  const [searchToggle, setSearchToggle] = useState<boolean>(false);
   let cartCount = 0;
 
-  if (getCartCount !== null) {
-    JSON.parse(getCartCount).forEach((item: Items) => {
+  if (props.cart !== null) {
+    props.cart.forEach((item: Items) => {
       cartCount += item.quantity;
     });
   }
@@ -20,23 +24,28 @@ export default function Header() {
     <div className={styles.navContainer}>
       <div className={styles.nav}>
         <SideNav />
-        <h1 className={styles.title} onClick={() => navigate('/')}>
+        <h1
+          className={searchToggle ? `${styles.none} ${styles.title} ` : styles.title}
+          onClick={() => navigate('/')}
+        >
           React Shop
         </h1>
         <div className={`${styles.navCategory} ml`}>
-          <span onClick={() => navigate('/fashion')} className={styles.category}>
-            패션
-          </span>
-          <span onClick={() => navigate('/accessory')} className={styles.category}>
-            악세서리
-          </span>
-          <span onClick={() => navigate('/digital')} className={styles.category}>
-            디지털
-          </span>
+          {categories.map((category, idx) => {
+            return (
+              <span
+                key={idx}
+                onClick={() => navigate(`/${category.en}`)}
+                className={styles.category}
+              >
+                {category.ko}
+              </span>
+            );
+          })}
         </div>
         <div className={styles.flex}>
           <input className={styles.changeTheme} type="checkbox" />
-          <label className={styles.label}>
+          <label className={searchToggle ? `${styles.none} ${styles.label} ` : styles.label}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -47,7 +56,7 @@ export default function Header() {
             </svg>
           </label>
           <div className={styles.searchBox}>
-            <SearchProduct />
+            <SearchProduct searchToggle={searchToggle} setSearchToggle={setSearchToggle} />
           </div>
           <div className={styles.label} onClick={() => navigate('/cart')}>
             <svg

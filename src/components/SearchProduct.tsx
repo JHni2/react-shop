@@ -1,12 +1,17 @@
 import styles from './SearchProduct.module.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ItemsDatas } from '../stores/items';
 import useModal from '../hooks/useModal';
 import { Link } from 'react-router-dom';
 import SearchModal from '../Modals/SearchModal';
 
-export default function SearchProduct() {
+interface SearchToggleType {
+  searchToggle: boolean;
+  setSearchToggle: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function SearchProduct(props: SearchToggleType) {
   const [input, setInput] = useState('');
 
   const searched = ItemsDatas.filter((item) =>
@@ -14,6 +19,10 @@ export default function SearchProduct() {
   );
 
   const { isOpen, toggle } = useModal();
+
+  useEffect(() => {
+    isOpen ? props.setSearchToggle(true) : props.setSearchToggle(false);
+  }, [isOpen]);
 
   return (
     <>
@@ -24,7 +33,7 @@ export default function SearchProduct() {
         }}
         placeholder="검색"
         className={styles.inputText}
-        onClick={toggle}
+        onFocus={toggle}
       />
       <SearchModal isOpen={isOpen} toggle={toggle}>
         <ul className={styles.serachedContainer}>
