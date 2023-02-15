@@ -11,7 +11,7 @@
 .serachedContainer{
   position: absolute;
   top: 62px;
-  right: calc((100vw - 1328px) / 2);
+  right: calc((100vw - 1308px) / 2);
   width: 22rem;
   max-height: 28rem;
   margin: 0;
@@ -53,7 +53,7 @@
   .serachedContainer{
     position: absolute;
       top: 62px;
-      right: 32px;
+      right: 42px;
    }
 }
 
