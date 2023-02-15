@@ -1,5 +1,5 @@
 import styles from './SideNav.module.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import useModal from '../hooks/useModal';
 import SearchModal from '../Modals/SearchModal';
 import { Link } from 'react-router-dom';
