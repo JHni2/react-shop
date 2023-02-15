@@ -6,6 +6,7 @@
   background: #2a303c;
   color: var(--base-text-color);
   box-shadow: 10px 11px 26px 14px rgb(0 0 0 / 5%);
+  animation: modal-show 0.3s;
 }
 
 .modalText{
@@ -16,4 +17,15 @@
   display: flex;
   gap:1rem;
   justify-content: flex-end;
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
 }
