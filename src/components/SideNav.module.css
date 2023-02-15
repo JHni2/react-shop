@@ -1,0 +1,50 @@
+.menu{
+  display: none;
+}
+
+.label{
+  width: 24px;
+  height: 24px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.sideNavContainer{
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: start;
+  cursor: auto;
+  transition: width .3s;
+  background-color: rgb(42,48,60);
+}
+
+.sideNavItem{
+  width: 100%;
+  padding: 1.2rem;
+}
+
+.sideNavItem:hover{
+  cursor: pointer;
+}
+
+.modalOverlay {
+  background-color: black;
+}
+
+@media screen and (max-width: 1024px){
+  .menu{
+    display: block;
+  }
+}
+  
+@media screen and (max-width: 488px){
+  .sideNavContainer{
+    width: 240px;
+  }
+}
+
+
+  

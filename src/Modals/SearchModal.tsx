@@ -6,13 +6,17 @@ interface ModalType {
   children?: ReactNode;
   isOpen: boolean;
   toggle: () => void;
+  background?: string;
 }
 
 export default function SearchModal(props: ModalType) {
   return (
     <>
       {props.isOpen && (
-        <div className={styles.modalOverlay} onClick={props.toggle}>
+        <div
+          className={props.background ? styles.modalOverlayBlack : styles.modalOverlay}
+          onClick={props.toggle}
+        >
           {props.children}
         </div>
       )}

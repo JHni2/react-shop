@@ -1,4 +1,5 @@
-.modalOverlay {
+.modalOverlay,
+.modalOverlayBlack {
   z-index: -1;
   width: 100vw;
   height: 100vh;
@@ -7,4 +8,10 @@
   left: 0;
   display: flex;
   cursor:auto
+}
+
+.modalOverlayBlack{
+  z-index: 1;
+  background-color: black;
+  cursor: pointer;
 }

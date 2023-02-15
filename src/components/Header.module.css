@@ -91,13 +91,14 @@
   background: #EF4444;
 }
 
+@media screen and (max-width: 1024px){
+
+}
+
 @media screen and (max-width: 768px){
-  .menu{
-    display: block;
-  }
   .navCategory{
-  display: none;
- }
+    display: none;
+   }
  .title{
   flex: 1 1 0%;
  }
