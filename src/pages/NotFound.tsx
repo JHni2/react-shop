@@ -13,7 +13,7 @@ export default function NotFound(): React.ReactElement {
           <h1 className={styles.title}>404</h1>
           <p className={styles.text}>페이지를 찾을 수 없습니다.</p>
           <Link to="/">
-            <button className="btn-primary">메인으로</button>
+            <button className="btn-main">메인으로</button>
           </Link>
         </div>
       </section>

@@ -25,7 +25,7 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
         <p className={styles.modalText}>장바구니의 모든 상품들이 삭제됩니다.</p>
         <div className={styles.btnGroup}>
           <button
-            className="btn-primary"
+            className="btn-main"
             onClick={() => {
               onHide();
               window.localStorage.removeItem('products');

@@ -58,10 +58,55 @@ button:hover {
   cursor:pointer;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.btn-main,
+.btn-move{
+  min-width: 38px;
+  font-size: 14px;
+  padding: 1.3rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgb(87,13,248);
+  border:none;
+  transition: background-color .2s;
 }
+
+.btn-main:hover{
+  background: rgb(77, 12, 219);
+}
+
+.btn-main:active{
+  background: rgb(69, 11, 194);
+}
+
+.btn-ghost{
+  min-width: 38px;
+  font-size: 14px;
+  padding: 1.3rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: default;
+  background: transparent;
+}
+
+.btn-move{
+  background: transparent;
+  color:rgb(166,173,186);
+  border:1px solid rgb(166,173,186);
+}
+
+.btn-move:hover{
+  background: rgb(166,173,186);
+  color:#20252E;
+  border:1px solid rgb(166,173,186);
+}
+
+.btn-move:active{
+  background: rgb(192, 200, 214);
+  color:#20252E;
+  border:1px solid rgb(192, 200, 214);
+}
+
 
 a:hover{
   color:inherit;
@@ -78,6 +123,7 @@ a:hover{
 
 .modal-content{
   background-color: transparent;
+  border: none;
 }
 
 .scrollDisable{

@@ -20,7 +20,7 @@
   align-items: center;
   width: 100%;
   max-width: 1360px;
-  min-width: 300px;
+  min-width: 336px;
 }
 
 .title{
@@ -38,7 +38,9 @@
 .label{
   width: 24px;
   height: 24px;
-  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-sizing: content-box;
   cursor: pointer;
 }
 
@@ -48,12 +50,18 @@
   padding-right:0.75rem;
   line-height: 2;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 1rem;
   transition: background-color .3s;
 }
 
-.category:hover{
+.category:hover,
+.label:hover{
   background-color: rgba(74, 83, 95, 0.555);
+}
+
+.category:active,
+.label:active{
+  background-color: rgba(112, 125, 143, 0.555);
 }
 
 .cursor{
@@ -72,7 +80,7 @@
   transition: ease all .5s;
 }
 
-.checkbox{
+.changeTheme{
   appearance: none ;
 }
 

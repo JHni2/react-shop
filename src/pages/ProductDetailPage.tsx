@@ -65,7 +65,7 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
             </div>
             <p className={styles.price}>${itemInfo.price}</p>
             <div className={styles.ButtonContainer}>
-              <button className="btn-primary" onClick={() => handleCartItems(itemInfo)}>
+              <button className="btn-main" onClick={() => handleCartItems(itemInfo)}>
                 장바구니에 담기
               </button>
               <Link to="/cart">

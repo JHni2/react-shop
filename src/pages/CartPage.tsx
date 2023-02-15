@@ -52,7 +52,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
               <>
                 <div className={styles.priceBox}>
                   <span className="text-medium-24">총 : ${totalPrice.toLocaleString('ko-KR')}</span>
-                  <button className="btn-primary" onClick={() => setShowModal(true)}>
+                  <button className="btn-main" onClick={() => setShowModal(true)}>
                     모두 구매하기
                   </button>
                 </div>
@@ -76,7 +76,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
                           </p>
                           <div className={styles.btnGroup}>
                             <button
-                              className="btn-primary"
+                              className="btn-main"
                               onClick={() => handleCount(product, 'minus')}
                               style={{
                                 borderTopRightRadius: '0',
@@ -87,7 +87,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
                             </button>
                             <button className="btn-ghost">{product.quantity}</button>
                             <button
-                              className="btn-primary"
+                              className="btn-main"
                               onClick={() => handleCount(product, 'plus')}
                               style={{
                                 borderTopLeftRadius: '0',
@@ -108,7 +108,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
                 <div>
                   <h1 className="text-medium-24">장바구니에 물품이 없습니다.</h1>
                   <Link to="/">
-                    <button className="btn-primary" style={{ marginTop: '3.5rem' }}>
+                    <button className="btn-main" style={{ marginTop: '3.5rem' }}>
                       담으러 가기
                     </button>
                   </Link>

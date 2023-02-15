@@ -35,8 +35,8 @@ export default function Header() {
           </span>
         </div>
         <div className={styles.flex}>
+          <input className={styles.changeTheme} type="checkbox" />
           <label className={styles.label}>
-            <input className={styles.checkbox} type="checkbox" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
