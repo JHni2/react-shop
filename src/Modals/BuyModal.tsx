@@ -36,7 +36,7 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
               {
                 onHide();
                 setCart([]);
-                // window.localStorage.removeItem('products');
+                window.localStorage.removeItem('products');
                 // window.location.replace('/cart');
               }
             }}
