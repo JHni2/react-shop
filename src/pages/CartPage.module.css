@@ -3,7 +3,6 @@
   width: 100%;
   min-height: calc(100vh - 165px);
   margin-top: 62px;
-  margin: auto;
   padding: 1rem;
 }
 
@@ -17,7 +16,8 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  margin-top: 5rem;
+  padding: 1rem;
+  margin-top: 4rem;
 }
 
 .priceBox{
@@ -45,7 +45,7 @@
   margin: 1rem 0;
   width: 250px;
   height: 250px;
-  min-width: 210;
+  min-width: 210px;
   border-radius: 10px;
 }
 
@@ -78,7 +78,10 @@
     flex-direction: column;
   }
   .imgContainer{
-    width: 98%;
+    width: 100%;
   }
+  .cardBox{
+    padding: 3rem 0;
 
+  }
 }
