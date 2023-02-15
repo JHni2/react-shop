@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ScrollToTop from './components/ScrollToTop';
 import CartPage from './pages/CartPage';
 import MainPage from './pages/MainPage';
 import NotFound from './pages/NotFound';
@@ -14,6 +15,7 @@ function App(): React.ReactElement {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/fashion" element={<ProductPage />} />

@@ -101,7 +101,6 @@ button {
   border:1px solid rgb(192, 200, 214);
 }
 
-
 a:hover{
   color:inherit;
 }
@@ -113,6 +112,15 @@ a:hover{
   height: 100%;
   background-color: rgb(42,48,60);
   color: var(--base-text-color);
+}
+
+.modal-open{
+  overflow:auto !important;
+  padding-right:0 !important;
+}
+
+.modal-backdrop{
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal-content{

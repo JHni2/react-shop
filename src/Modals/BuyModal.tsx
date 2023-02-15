@@ -10,6 +10,12 @@ interface ModalType {
 }
 
 export default function BuyModal({ show, onHide, setCart }: ModalType): React.ReactElement {
+  if (show)
+    document.body.style.cssText = `
+    max-height: 100vh!important;
+    overflow: hidden;`;
+  else document.body.style.cssText = '';
+
   return (
     <Modal
       show={show}
@@ -27,9 +33,9 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
           <button
             className="btn-main"
             onClick={() => {
-              onHide();
-              window.localStorage.removeItem('products');
               {
+                onHide();
+                window.localStorage.removeItem('products');
                 setCart([]);
                 window.location.replace('/cart');
               }
