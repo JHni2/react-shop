@@ -30,6 +30,7 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
               onHide();
               window.localStorage.removeItem('products');
               setCart([]);
+              window.location.replace('/cart');
             }}
           >
             네
