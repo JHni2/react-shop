@@ -1,9 +1,9 @@
 import styles from './BuyModal.module.css';
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { Items } from '../stores/items';
 import { themeDarkState } from '../stores/recoil/theme';
 import { useRecoilValue } from 'recoil';
+import { Items } from '../stores/recoil/items';
 
 interface ModalType {
   show: boolean;
