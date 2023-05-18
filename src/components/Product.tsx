@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 import { ItemsDatas } from '../stores/items';
+import { themeDarkState } from '../stores/recoil/theme';
 import styles from './Product.module.css';
 
 interface Props {
@@ -11,6 +13,7 @@ export default function Product(props: Props): React.ReactElement {
   let category = props.type;
   const location = useLocation();
   const [currLocation, setCurrLocation] = useState('/');
+  const themeDark = useRecoilValue(themeDarkState);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,16 +38,16 @@ export default function Product(props: Props): React.ReactElement {
               return (
                 <div
                   key={item.id}
-                  className={styles.itemBox}
+                  className={themeDark ? styles.itemBox : styles.itemBoxLightTheme}
                   onClick={() => {
                     navigate(`/product/${item.id}`);
                   }}
                 >
                   <figure className={styles.imgBox}>
-                    <img className={styles.itemImg} src={item.image} />
+                    <img className={styles.itemImg} alt={item.image} src={item.image} />
                   </figure>
-                  <div className={styles.des}>
-                    <p className="text-bold-16">{item.title}</p>
+                  <div className={themeDark ? styles.des : styles.desLightTheme}>
+                    <p className="text-bold-16 truncate">{item.title}</p>
                     <p className="text-medium-16">${item.price}</p>
                   </div>
                 </div>

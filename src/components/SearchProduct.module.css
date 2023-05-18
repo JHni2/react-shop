@@ -1,18 +1,28 @@
-.inputText{
-  width: 187px;
+.inputText,
+.inputTextLightTheme{
+  width: 250px;
   height: 46px;
   padding:0 16px 0 16px;
-  background-color: rgb(75 85 99);
   border: none;
   border-radius: .5rem;
   outline: none;
 }
 
-.serachedContainer{
+.inputText{
+  background-color: rgb(75 85 99);
+}
+
+.inputTextLightTheme{
+  background-color: var(--color-gray-400);
+  color:var(--color-black);
+}
+
+.serachedContainer,
+.serachedContainerLightTheme{
   position: absolute;
   top: 62px;
   right: calc((100vw - 1308px) / 2);
-  width: 22rem;
+  width: 28rem;
   max-height: 28rem;
   margin: 0;
   padding: 0;
@@ -20,9 +30,15 @@
   background-color: rgb(75 85 99);
 }
 
-.searchList{
+.serachedContainerLightTheme{
+  background-color: var(--color-gray-500);
+}
+
+.searchList,
+.searchListLightTheme{
   padding:1rem;
   transition: background-color .3s;
+  cursor: pointer;
 }
 
 .searchListText{
@@ -38,6 +54,10 @@
   background-color: #545D6C;
 }
 
+.searchListLightTheme:hover{
+  background-color: var(--color-gray-300);
+}
+
 .modalOverlay {
   z-index: -1;
   width: 100vw;
@@ -50,19 +70,22 @@
 }
 
 @media screen and (max-width: 1400px){
-  .serachedContainer{
+  .serachedContainer,
+  .serachedContainerLightTheme{
     position: absolute;
       top: 62px;
-      right: 42px;
+      right: 44px;
    }
 }
 
 @media screen and (max-width: 488px){
- .inputText{
+ .inputText,
+ .inputTextLightTheme{
   width: 62px;
   padding-left: 14px;
  }
- .inputText:focus{
+ .inputText:focus,
+ .inputTextLightTheme:focus{
   width: 202px;
   padding-left: 14px;
   transition: width .3s;

@@ -3,8 +3,10 @@ import styles from './SearchProduct.module.css';
 import { useEffect, useState } from 'react';
 import { ItemsDatas } from '../stores/items';
 import useModal from '../hooks/useModal';
-import { Link } from 'react-router-dom';
 import SearchModal from '../Modals/SearchModal';
+import { useNavigate } from 'react-router-dom';
+import { themeDarkState } from '../stores/recoil/theme';
+import { useRecoilValue } from 'recoil';
 
 interface SearchToggleType {
   searchToggle: boolean;
@@ -13,6 +15,8 @@ interface SearchToggleType {
 
 export default function SearchProduct(props: SearchToggleType) {
   const [input, setInput] = useState('');
+  const themeDark = useRecoilValue(themeDarkState);
+  const navigate = useNavigate();
 
   const searched = ItemsDatas.filter((item) =>
     item.title.toLocaleLowerCase().includes(input.toLocaleLowerCase()),
@@ -32,19 +36,24 @@ export default function SearchProduct(props: SearchToggleType) {
           setInput(e.target.value);
         }}
         placeholder="검색"
-        className={styles.inputText}
+        className={themeDark ? styles.inputText : styles.inputTextLightTheme}
         onFocus={toggle}
       />
       <SearchModal isOpen={isOpen} toggle={toggle}>
-        <ul className={styles.serachedContainer}>
+        <ul className={themeDark ? styles.serachedContainer : styles.serachedContainerLightTheme}>
           {input.length > 0 &&
             searched.map((item) => {
               return (
-                <Link to={{ pathname: `/product/${item.id}` }} key={item.title}>
-                  <li className={styles.searchList}>
-                    <span className={styles.searchListText}>{item.title}</span>
-                  </li>
-                </Link>
+                <li
+                  key={item.id}
+                  onClick={() => {
+                    setInput('');
+                    navigate(`/product/${item.id}`);
+                  }}
+                  className={themeDark ? styles.searchList : styles.searchListLightTheme}
+                >
+                  <span className={styles.searchListText}>{item.title}</span>
+                </li>
               );
             })}
         </ul>

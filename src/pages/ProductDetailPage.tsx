@@ -3,6 +3,8 @@ import styles from './ProductDetailPage.module.css';
 import { Link, useParams } from 'react-router-dom';
 import { Items, ItemsDatas } from '../stores/items';
 import StarRate from '../components/StarRating';
+import { useRecoilValue } from 'recoil';
+import { themeDarkState } from '../stores/recoil/theme';
 
 interface CartProps {
   cart: Items[];
@@ -11,6 +13,7 @@ interface CartProps {
 
 export default function ProductDetailPage(props: CartProps): React.ReactElement {
   const { id } = useParams();
+  const themeDark = useRecoilValue(themeDarkState);
   const currentItem = props.cart.filter((itemData) => itemData.id === Number(id))[0];
   const currItemInfo =
     currentItem == undefined
@@ -45,7 +48,7 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
   }, [props.cart]);
 
   return (
-    <div className="wrapper">
+    <div className={themeDark ? 'wrapper' : 'wrapperLightTheme'}>
       <section className={styles.pageContainer}>
         <div className={styles.breadcrumbs}>
           {currItemInfo.category[0]} &gt; {currItemInfo.title}

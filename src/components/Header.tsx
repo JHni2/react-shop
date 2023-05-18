@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { categories, Items } from '../stores/items';
+import { themeDarkState } from '../stores/recoil/theme';
 import styles from './Header.module.css';
 import SearchProduct from './SearchProduct';
 import SideNav from './SideNav';
@@ -12,6 +14,7 @@ interface PropsType {
 export default function Header(props: PropsType) {
   const navigate = useNavigate();
   const [searchToggle, setSearchToggle] = useState<boolean>(false);
+  const [themeDark, setThemeDark] = useRecoilState(themeDarkState);
   let cartCount = 0;
 
   if (props.cart !== null) {
@@ -20,16 +23,32 @@ export default function Header(props: PropsType) {
     });
   }
 
+  useLayoutEffect(() => {
+    if (localStorage.getItem('themeDark') === 'true') {
+      setThemeDark(true);
+    } else {
+      setThemeDark(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (themeDark) {
+      localStorage.setItem('themeDark', 'true');
+    } else {
+      localStorage.setItem('themeDark', 'false');
+    }
+  }, [themeDark]);
+
   return (
-    <div className={styles.navContainer}>
+    <div className={themeDark ? styles.navContainer : styles.navContainerLightTheme}>
       <div className={styles.nav}>
         <SideNav />
-        <h1
-          className={searchToggle ? `${styles.none} ${styles.title} ` : styles.title}
+        <div
+          className={searchToggle ? `${styles.none} ${styles.titleBox} ` : styles.titleBox}
           onClick={() => navigate('/')}
         >
-          React Shop
-        </h1>
+          <h1 className={styles.title}>React Shop</h1>
+        </div>
         <div className={`${styles.navCategory} ml`}>
           {categories.map((category, idx) => {
             return (
@@ -44,8 +63,10 @@ export default function Header(props: PropsType) {
           })}
         </div>
         <div className={styles.flex}>
-          <input className={styles.changeTheme} type="checkbox" />
-          <label className={searchToggle ? `${styles.none} ${styles.label} ` : styles.label}>
+          <label
+            onClick={() => setThemeDark(!themeDark)}
+            className={searchToggle ? `${styles.none} ${styles.label} ` : styles.label}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"

@@ -1,4 +1,5 @@
-.modalBox{
+.modalBox,
+.modalBoxLightTheme{
   width: 512px;
   margin: auto;
   padding: 2.5rem;
@@ -7,6 +8,11 @@
   color: var(--base-text-color);
   box-shadow: 10px 11px 26px 14px rgb(0 0 0 / 5%);
   animation: modal-show 0.3s;
+}
+
+.modalBoxLightTheme{
+  background: var(--color-white);
+  color: var(--color-black);
 }
 
 .modalText{
@@ -31,14 +37,16 @@
 }
 
 @media screen and (max-width: 768px){
-  .modalBox{
+  .modalBox,
+  .modalBoxLightTheme{
     width: auto;
     padding: 2.5rem 4rem;
   }
 }
 
 @media screen and (max-width: 488px){
- .modalBox{
+ .modalBox,
+ .modalBoxLightTheme{
    position: fixed;
    min-width: 255px;
    width: 100%;

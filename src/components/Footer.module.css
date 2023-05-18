@@ -1,12 +1,21 @@
-.footer{
+.footer,
+.footerLightTheme{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 40px;
+}
+
+.footer{
   color:var(--base-text-color);
   background-color: rgb(36,41,51);
+}
+
+.footerLightTheme{
+  background-color: var(--color-gray-200);
+  color:var(--color-black);
 }
 
 .gitICon{

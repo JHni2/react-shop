@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Items } from '../stores/items';
 import BuyModal from '../Modals/BuyModal';
+import { useRecoilValue } from 'recoil';
+import { themeDarkState } from '../stores/recoil/theme';
 
 interface CartProps {
   cart: Items[];
@@ -12,6 +14,7 @@ interface CartProps {
 
 export default function CartPage(props: CartProps): React.ReactElement {
   const [showModal, setShowModal] = useState(false);
+  const themeDark = useRecoilValue(themeDarkState);
   let totalPrice = 0;
 
   const handleCount = (product: Items, type: string) => {
@@ -41,7 +44,7 @@ export default function CartPage(props: CartProps): React.ReactElement {
   return (
     <>
       <BuyModal setCart={props.setCart} show={showModal} onHide={() => setShowModal(false)} />
-      <div className="wrapper">
+      <div className={themeDark ? 'wrapper' : 'wrapperLightTheme'}>
         <section className={styles.pageContainer}>
           <div className={styles.breadcrumbs}>홈 &gt; 장바구니</div>
           <div className={styles.cartContainer}>
@@ -82,7 +85,9 @@ export default function CartPage(props: CartProps): React.ReactElement {
                             >
                               -
                             </button>
-                            <button className="btn-ghost">{product.quantity}</button>
+                            <button className={themeDark ? 'btn-ghost' : 'btn-ghostLightTheme'}>
+                              {product.quantity}
+                            </button>
                             <button
                               className="btn-main"
                               onClick={() => handleCount(product, 'plus')}

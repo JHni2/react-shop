@@ -2,6 +2,8 @@ import styles from './BuyModal.module.css';
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { Items } from '../stores/items';
+import { themeDarkState } from '../stores/recoil/theme';
+import { useRecoilValue } from 'recoil';
 
 interface ModalType {
   show: boolean;
@@ -10,6 +12,8 @@ interface ModalType {
 }
 
 export default function BuyModal({ show, onHide, setCart }: ModalType): React.ReactElement {
+  const themeDark = useRecoilValue(themeDarkState);
+
   if (show)
     document.body.style.cssText = `
     max-height: 100vh!important;
@@ -26,7 +30,7 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <div className={styles.modalBox}>
+      <div className={themeDark ? styles.modalBox : styles.modalBoxLightTheme}>
         <h3 style={{ fontWeight: '600' }}>정말로 구매하시겠습니까?</h3>
         <p className={styles.modalText}>장바구니의 모든 상품들이 삭제됩니다.</p>
         <div className={styles.btnGroup}>
@@ -35,8 +39,8 @@ export default function BuyModal({ show, onHide, setCart }: ModalType): React.Re
             onClick={() => {
               {
                 onHide();
-                setCart([]);
                 window.localStorage.removeItem('products');
+                setCart([]);
                 window.location.replace('/cart');
               }
             }}

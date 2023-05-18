@@ -28,10 +28,15 @@
   gap:2rem;
 }
 
-.itemBox{
+.itemBox,.itemBoxLightTheme{
   display: flex;
   flex-direction: column;
   cursor: pointer;
+}
+
+.itemBoxLightTheme{
+  border: 1px solid var(--color-gray-400);
+  border-radius: 10px;
 }
 
 .imgBox{
@@ -55,17 +60,26 @@
   max-height: 70%;
 }
 
-.des{
+.des,
+.desLightTheme{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding:1rem;
   gap:1rem;
-  color:rgb(166, 177, 186);
-  background-color: rgb(55,65,81);
   min-height: 116px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.des{
+  color:rgb(166, 177, 186);
+  background-color: rgb(55,65,81);
+}
+
+.desLightTheme{
+  background-color: var(--color-gray-400);
+  color:var(--color-black);
 }
 
 

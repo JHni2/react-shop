@@ -1,10 +1,14 @@
 import styles from './NotFound.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { themeDarkState } from '../stores/recoil/theme';
 
 export default function NotFound(): React.ReactElement {
+  const themeDark = useRecoilValue(themeDarkState);
+
   return (
-    <div className="wrapper">
+    <div className={themeDark ? 'wrapper' : 'wrapperLightTheme'}>
       <section className={styles.pageContainer}>
         <div className={styles.textBox}>
           <h1 className={styles.title}>404</h1>

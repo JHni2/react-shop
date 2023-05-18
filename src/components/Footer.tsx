@@ -1,10 +1,14 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { themeDarkState } from '../stores/recoil/theme';
 import styles from './Footer.module.css';
 
 export default function Footer(): React.ReactElement {
   const gitUrl = 'https://github.com/JHni2';
+  const themeDark = useRecoilValue(themeDarkState);
+
   return (
-    <section className={styles.footer}>
+    <section className={themeDark ? styles.footer : styles.footerLightTheme}>
       <p className="text-regular-14">ABOUT REACT SHOP</p>
       <div className={styles.gitICon} onClick={() => window.open(gitUrl, '_blank')}>
         <svg
