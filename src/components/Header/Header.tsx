@@ -1,11 +1,11 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { categories, Items } from '../stores/items';
-import { themeDarkState } from '../stores/recoil/theme';
+import { categories, Items } from '../../stores/recoil/items';
+import { themeDarkState } from '../../stores/recoil/theme';
+import SearchProduct from '../SearchProduct/SearchProduct';
+import SideNav from '../SideNav/SideNav';
 import styles from './Header.module.css';
-import SearchProduct from './SearchProduct';
-import SideNav from './SideNav';
 
 interface PropsType {
   cart: Items[];

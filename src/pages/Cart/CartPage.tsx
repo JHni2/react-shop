@@ -2,10 +2,10 @@ import styles from './CartPage.module.css';
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Items } from '../stores/items';
-import BuyModal from '../Modals/BuyModal';
 import { useRecoilValue } from 'recoil';
-import { themeDarkState } from '../stores/recoil/theme';
+import { Items } from '../../stores/recoil/items';
+import { themeDarkState } from '../../stores/recoil/theme';
+import BuyModal from '../../Modals/BuyModal';
 
 interface CartProps {
   cart: Items[];

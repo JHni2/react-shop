@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import ScrollToTop from './components/ScrollToTop';
-import CartPage from './pages/CartPage';
-import MainPage from './pages/MainPage';
-import NotFound from './pages/NotFound';
-import ProductDetailPage from './pages/ProductDetailPage';
-import ProductPage from './pages/ProductPage';
-import { Items } from './stores/items';
+import ScrollToTop from './components/Utill/ScrollToTop';
+
 import { RecoilRoot } from 'recoil';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import { Items } from './stores/recoil/items';
+import MainPage from './pages/Main/MainPage';
+import ProductPage from './pages/Product/ProductPage';
+import ProductDetailPage from './pages/ProductDetail/ProductDetailPage';
+import CartPage from './pages/Cart/CartPage';
+import NotFound from './pages/NotFound/NotFound';
 
 function App(): React.ReactElement {
   const products = localStorage.getItem('products');

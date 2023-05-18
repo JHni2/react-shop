@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ProductDetailPage.module.css';
 import { Link, useParams } from 'react-router-dom';
-import StarRate from '../components/StarRating';
 import { useRecoilValue } from 'recoil';
-import { themeDarkState } from '../stores/recoil/theme';
-import { categories, fakeAPI, Items } from '../stores/recoil/items';
 import axios from 'axios';
+import { categories, fakeAPI, Items } from '../../stores/recoil/items';
+import { themeDarkState } from '../../stores/recoil/theme';
+import StarRate from '../../components/Utill/StarRating';
 
 interface CartProps {
   cart: Items[];

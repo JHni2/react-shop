@@ -1,12 +1,15 @@
 import styles from './SideNav.module.css';
 import React from 'react';
-import useModal from '../hooks/useModal';
-import SearchModal from '../Modals/SearchModal';
 import { Link } from 'react-router-dom';
-import { categories } from '../stores/items';
+import useModal from '../../hooks/useModal';
+import SearchModal from '../../Modals/SearchModal';
+import { categories } from '../../stores/recoil/items';
+import { useRecoilValue } from 'recoil';
+import { themeDarkState } from '../../stores/recoil/theme';
 
 export default function SideNav(): React.ReactElement {
   const { isOpen, toggle } = useModal();
+  const themeDark = useRecoilValue(themeDarkState);
 
   if (isOpen)
     document.body.style.cssText = `
@@ -30,11 +33,16 @@ export default function SideNav(): React.ReactElement {
         </svg>
       </label>
       <SearchModal isOpen={isOpen} toggle={toggle} background={'black'}>
-        <ul className={styles.sideNavContainer}>
+        <ul className={themeDark ? styles.sideNavContainer : styles.sideNavContainerLightTheme}>
           {categories.map((category, idx) => {
             return (
-              <li className={styles.sideNavItem} key={idx}>
-                <Link to={`/${category.en}`}>{category.ko}</Link>
+              <li
+                className={themeDark ? styles.sideNavItem : styles.sideNavItemLightTheme}
+                key={idx}
+              >
+                <Link className="text-bold-16" to={`/${category.en}`}>
+                  {category.ko}
+                </Link>
               </li>
             );
           })}

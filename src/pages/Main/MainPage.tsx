@@ -2,10 +2,10 @@ import styles from './MainPage.module.css';
 
 import React from 'react';
 
-import BannerCarousel from '../components/BannerCarousel';
-import Product from '../components/Product';
 import { useRecoilValue } from 'recoil';
-import { themeDarkState } from '../stores/recoil/theme';
+import { themeDarkState } from '../../stores/recoil/theme';
+import BannerCarousel from '../../components/Banner/BannerCarousel';
+import Product from '../../components/Product/Product';
 
 export default function MainPage(): React.ReactElement {
   const themeDark = useRecoilValue(themeDarkState);

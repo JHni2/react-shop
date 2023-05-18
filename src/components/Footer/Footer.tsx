@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { themeDarkState } from '../stores/recoil/theme';
+import { themeDarkState } from '../../stores/recoil/theme';
 import styles from './Footer.module.css';
 
 export default function Footer(): React.ReactElement {

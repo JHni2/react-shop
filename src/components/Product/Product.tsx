@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
-import { itemList } from '../stores/recoil/items';
-import { themeDarkState } from '../stores/recoil/theme';
+import { itemList } from '../../stores/recoil/items';
+import { themeDarkState } from '../../stores/recoil/theme';
 import styles from './Product.module.css';
 
 interface Props {

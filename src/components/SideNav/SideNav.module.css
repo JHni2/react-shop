@@ -19,7 +19,8 @@
   background-color: rgba(112, 125, 143, 0.555);
 }
 
-.sideNavContainer{
+.sideNavContainer,
+.sideNavContainerLightTheme{
   display: flex;
   flex-direction: column;
   width: 320px;
@@ -27,21 +28,34 @@
   padding: 1.5rem;
   text-align: start;
   cursor: auto;
-  transition: width .3s;
   background-color: rgb(42,48,60);
+  transition: width .3s;
 }
 
-.sideNavItem{
+.sideNavContainerLightTheme{
+  background-color: var(--color-gray-300);
+}
+
+.sideNavItem,
+.sideNavItemLightTheme{
   width: 100%;
   padding: 1.2rem;
+  cursor: pointer;
+  border-radius:10px;
+  transition: all .3s;
 }
 
 .sideNavItem:hover{
-  cursor: pointer;
+  background-color: rgba(111,120,137,0.3);
+}
+
+.sideNavItemLightTheme:hover{
+  background-color: var(--color-gray-100);
 }
 
 .modalOverlay {
   background-color: black;
+  cursor: default;
 }
 
 @media screen and (max-width: 1024px){

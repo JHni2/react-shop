@@ -1,12 +1,12 @@
 import styles from './SearchProduct.module.css';
 
 import { useEffect, useState } from 'react';
-import useModal from '../hooks/useModal';
-import SearchModal from '../Modals/SearchModal';
 import { useNavigate } from 'react-router-dom';
-import { themeDarkState } from '../stores/recoil/theme';
 import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
-import { itemList } from '../stores/recoil/items';
+import { themeDarkState } from '../../stores/recoil/theme';
+import { itemList } from '../../stores/recoil/items';
+import useModal from '../../hooks/useModal';
+import SearchModal from '../../Modals/SearchModal';
 
 interface SearchToggleType {
   searchToggle: boolean;

@@ -2,7 +2,7 @@ import styles from './NotFound.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { themeDarkState } from '../stores/recoil/theme';
+import { themeDarkState } from '../../stores/recoil/theme';
 
 export default function NotFound(): React.ReactElement {
   const themeDark = useRecoilValue(themeDarkState);
