@@ -55,7 +55,9 @@
   transition: max-width .25s, max-height .25s;
 }
 
-.itemBox:hover .itemImg{
+.itemBox:hover .itemImg,
+.itemBoxLightTheme:hover .itemImg
+{
   max-width: 70%;
   max-height: 70%;
 }

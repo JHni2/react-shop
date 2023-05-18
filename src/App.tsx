@@ -23,9 +23,9 @@ function App(): React.ReactElement {
         <Header cart={cart} />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/fashion" element={<ProductPage />} />
-          <Route path="/accessory" element={<ProductPage />} />
-          <Route path="/digital" element={<ProductPage />} />
+          <Route path="/clothing" element={<ProductPage />} />
+          <Route path="/jewelery" element={<ProductPage />} />
+          <Route path="/electronics" element={<ProductPage />} />
           <Route
             path="/product/:id"
             element={<ProductDetailPage cart={cart} setCart={setCart} />}

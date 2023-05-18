@@ -1,12 +1,12 @@
 import styles from './SearchProduct.module.css';
 
 import { useEffect, useState } from 'react';
-import { ItemsDatas } from '../stores/items';
 import useModal from '../hooks/useModal';
 import SearchModal from '../Modals/SearchModal';
 import { useNavigate } from 'react-router-dom';
 import { themeDarkState } from '../stores/recoil/theme';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
+import { itemList } from '../stores/recoil/items';
 
 interface SearchToggleType {
   searchToggle: boolean;
@@ -16,9 +16,11 @@ interface SearchToggleType {
 export default function SearchProduct(props: SearchToggleType) {
   const [input, setInput] = useState('');
   const themeDark = useRecoilValue(themeDarkState);
+  const itemsLodable = useRecoilValueLoadable(itemList);
+  let items = 'hasValue' === itemsLodable.state ? itemsLodable.contents : [];
   const navigate = useNavigate();
 
-  const searched = ItemsDatas.filter((item) =>
+  const searched = items.filter((item) =>
     item.title.toLocaleLowerCase().includes(input.toLocaleLowerCase()),
   );
 

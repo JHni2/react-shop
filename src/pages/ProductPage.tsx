@@ -11,7 +11,7 @@ export default function ProductPage(): React.ReactElement {
   return (
     <div className={themeDark ? 'wrapper' : 'wrapperLightTheme'}>
       <section className={styles.pageContainer}>
-        <Product type="" />
+        <Product />
       </section>
     </div>
   );

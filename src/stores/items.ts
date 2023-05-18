@@ -1,7 +1,7 @@
 export const categories = [
-  { ko: '패션', en: 'fashion' },
-  { ko: '악세서리', en: 'accessory' },
-  { ko: '디지털', en: 'digital' },
+  { ko: '패션', en: 'clothing' },
+  { ko: '악세서리', en: 'jewelery' },
+  { ko: '디지털', en: 'electronics' },
 ];
 
 export interface Items {

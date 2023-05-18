@@ -1,26 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProductDetailPage.module.css';
 import { Link, useParams } from 'react-router-dom';
-import { Items, ItemsDatas } from '../stores/items';
 import StarRate from '../components/StarRating';
 import { useRecoilValue } from 'recoil';
 import { themeDarkState } from '../stores/recoil/theme';
+import { categories, fakeAPI, Items } from '../stores/recoil/items';
+import axios from 'axios';
 
 interface CartProps {
   cart: Items[];
-  setCart: React.Dispatch<React.SetStateAction<Items[]>>;
+  setCart: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 export default function ProductDetailPage(props: CartProps): React.ReactElement {
   const { id } = useParams();
   const themeDark = useRecoilValue(themeDarkState);
-  const currentItem = props.cart.filter((itemData) => itemData.id === Number(id))[0];
-  const currItemInfo =
-    currentItem == undefined
-      ? ItemsDatas.filter((itemData) => itemData.id === Number(id))[0]
-      : props.cart.filter((itemData) => itemData.id === Number(id))[0];
+  const [itemInfo, setItemInfo] = useState<Items>();
+
+  const getItemInfo = async () => {
+    try {
+      const response = await axios.get(fakeAPI + id);
+      return await response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    const fetchItemInfo = async () => {
+      setItemInfo(await getItemInfo());
+    };
+
+    fetchItemInfo();
+  }, [id]);
 
   const handleCartItems = (cartItemInfo: Items) => {
+    if (isNaN(cartItemInfo.quantity)) {
+      cartItemInfo.quantity = 0;
+    }
     cartItemInfo.quantity += 1;
 
     const newCartItem = {
@@ -37,9 +54,11 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
     const found = props.cart.filter((el) => el.id === id)[0];
     const idx = props.cart.indexOf(found);
     const newCartItem = {
-      ...currItemInfo,
+      ...itemInfo,
       quantity: quantity,
     };
+
+    console.log(newCartItem);
     props.setCart([...props.cart.slice(0, idx), newCartItem, ...props.cart.slice(idx + 1)]);
   };
 
@@ -49,37 +68,46 @@ export default function ProductDetailPage(props: CartProps): React.ReactElement 
 
   return (
     <div className={themeDark ? 'wrapper' : 'wrapperLightTheme'}>
-      <section className={styles.pageContainer}>
-        <div className={styles.breadcrumbs}>
-          {currItemInfo.category[0]} &gt; {currItemInfo.title}
-        </div>
-        <div className={styles.productContainer}>
-          <figure className={styles.imgContainer}>
-            <img className={styles.img} src={currItemInfo.image} alt={currItemInfo.title} />
-          </figure>
-          <div className={styles.productInfo}>
-            <h2 style={{ fontWeight: '700' }}>{currItemInfo.title}</h2>
-            <p>{currItemInfo.description}</p>
-            <div className={styles.ratingContainer}>
-              <div>
-                <StarRate rate={currItemInfo.rating.rate} />
+      {itemInfo ? (
+        <section className={styles.pageContainer}>
+          <div className={styles.breadcrumbs}>
+            {categories.map((category) => {
+              if (itemInfo.category.includes(category.en)) {
+                return `${category.ko} > ${itemInfo.title}`;
+              }
+              return null;
+            })}
+          </div>
+          <div className={styles.productContainer}>
+            <figure className={styles.imgContainer}>
+              <img className={styles.img} src={itemInfo.image} alt={itemInfo.title} />
+            </figure>
+            <div className={styles.productInfo}>
+              <h2 style={{ fontWeight: '700' }}>{itemInfo.title}</h2>
+              <p>{itemInfo.description}</p>
+              <div className={styles.ratingContainer}>
+                <div>
+                  <StarRate rate={itemInfo.rating.rate} />
+                </div>
+                <div>
+                  {itemInfo.rating.rate} / {itemInfo.rating.count} 참여
+                </div>
               </div>
-              <div>
-                {currItemInfo.rating.rate} / {currItemInfo.rating.count} 참여
+              <p className={styles.price}>${itemInfo.price}</p>
+              <div className={styles.ButtonContainer}>
+                <button className="btn-main" onClick={() => handleCartItems(itemInfo)}>
+                  장바구니에 담기
+                </button>
+                <Link to="/cart">
+                  <button className="btn-move">장바구니로 이동</button>
+                </Link>
               </div>
-            </div>
-            <p className={styles.price}>${currItemInfo.price}</p>
-            <div className={styles.ButtonContainer}>
-              <button className="btn-main" onClick={() => handleCartItems(currItemInfo)}>
-                장바구니에 담기
-              </button>
-              <Link to="/cart">
-                <button className="btn-move">장바구니로 이동</button>
-              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className={styles.pageContainer}></section>
+      )}
     </div>
   );
 }
