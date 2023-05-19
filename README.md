@@ -1,7 +1,10 @@
 ## Project
 프로젝트 기간 
+
 2023년 2월 7일 ~ 2월 15일
+
 [project github](https://github.com/JHni2/react-shop)
+
 [project notion](https://www.notion.so/React-Shop-14974544871841458c65e0298a817a87?pvs=4)
 
 ### 프로젝트 소개
