@@ -1,6 +1,8 @@
 ## Project
 프로젝트 기간 
 2023년 2월 7일 ~ 2월 15일
+[project github](https://github.com/JHni2/react-shop)
+[project notion](https://www.notion.so/React-Shop-14974544871841458c65e0298a817a87?pvs=4)
 
 ### 프로젝트 소개
 
@@ -14,7 +16,7 @@ Fake API를 사용한 React 쇼핑몰입니다.
 
 ### **배포 링크**
 
-[[React Shop](https://react-shop-one-pi.vercel.app/)](https://react-shop-one-pi.vercel.app/)
+[React Shop](https://react-shop-one-pi.vercel.app/)
 
 ### **기술 스택**
 
