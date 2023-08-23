@@ -23,7 +23,7 @@ Fake API를 사용한 React 쇼핑몰입니다.
 
 ### **기술 스택**
 
-**`React` `Vite`** **`Typescript`** **`recoil`** **`aixos` `Firebase` `CSS Module`** **`Eslint`**
+**`React`** **`Vite`** **`Typescript`** **`recoil`** **`aixos`** **`CSS Module`** **`Eslint`**
 
 ### 프로젝트 주요 기능
 
