@@ -4,18 +4,30 @@
   margin-top: 64px;
 }
 
-.des{
+.carouselContainer img{
+  object-fit: cover;
+}
+
+.desContainer{
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
   position: absolute;
-  height: 100%;
-  padding: 40px;
+  height: calc(100% - 64px);
   color:var(--color-white)
 }
 
+.des{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1360px;
+  min-width: 336px;
+  padding-left: 4rem;
+}
+
 .moveBtn{
+  display: block;
   margin-top: 0.75rem;
   color:var(--base-text-color);
   padding:1rem 1.5rem;
@@ -35,3 +47,8 @@
   height: 250px;
 }
 }
+
+@media screen and (min-width: 1024px){
+  .des{
+  }
+  }
